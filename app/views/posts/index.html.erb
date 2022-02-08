@@ -1,0 +1,45 @@
+
+  
+<%= render  'posts/searchbar' %>  
+
+   <p id="notice"><%= notice %></p>
+
+
+
+      <p style = "color:green"><%= notice%></p>
+        <div class="col-lg-8 mx-auto">
+      <%if current_user && current_user.admin %> 
+
+              <%= link_to 'Add New Book', new_post_path, class:"btn btn-outline-primary btn-lg mb-3"%> &emsp;
+
+      <% end  %>              
+        <h1>Available Books</h1>
+        <div id="posts">
+            <%@post.each do |post| %>
+              <div class="card shadow mb-3">
+                <div class="card-body">
+                  <%= image_tag post.image if post.image.attached? %>
+                  <%#= video_tag post.avatar if post.avatar.attached? %>
+                 <p>
+                  <strong>Title:</strong> <%= post.title %><br>
+                  <strong>Author:</strong><%= post.author %><br>
+                  <strong>Subject:</strong><%= post.b_subject %><br>
+                  <!-- <strong>Id:</strong><%#= post.user_id %><br> -->
+                 </p>
+              </div>
+           </div> 
+          <table>
+            <td>
+              <%= link_to 'Book Details', post , class:"btn btn-primary btn-lg mb-3"%></td>
+               <%if current_user && current_user.admin %> 
+                <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-primary btn-lg mb-3" %>
+                </td>
+                <td><%= button_to 'Destroy', post, class:"btn btn-primary btn-lg mb-3", method: :delete, data: { confirm: 'Are you sure?' } %> </td>     
+                <% end %>
+            </table>
+        <%end%>
+            
+      </div>
+    </div>
+
+

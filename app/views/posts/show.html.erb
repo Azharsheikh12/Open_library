@@ -1,0 +1,60 @@
+<div class="col-lg-8 ">
+    <div class="card shadow">
+      <div class="card-body">
+        <%= image_tag @post.image if @post.image.attached? %><br>
+        <div width="150px" height= "150px">
+          </div>
+              <p>
+                <strong>Title:</strong>
+                <%= @post.title %>
+              </p>
+              <p>
+                <strong>author:</strong>
+                <%= @post.author %>
+              </p>
+              <p>
+                <strong>Subject:</strong>
+                <%= @post.b_subject %>
+              </p>
+              <!-- <p>
+                <strong>User:</strong>
+                <%#= @post.user_id %>
+              </p> -->
+              <p>
+                <strong>Description:</strong>
+                <%= @post.description %>
+              </p>
+       </div>
+    </div>
+</div>
+
+
+    <div class="mt-5">
+        <%= link_to 'Back', posts_path, class: "btn btn-outline-primary"%>
+        <%#= link_to "Login to Download Book", class: "btn btn-warning" %>
+        <% if current_user%> 
+        <%=  link_to "Download book", @post.attachment_url, class: "btn btn-outline-primary" %>
+        <% else %>
+        <%= link_to "Please Signin/Signup to Download this book", class:"btn btn-outline-primary"%>
+        <%end %>
+    </div>
+    <div>
+        <h2><%= @post.comments.count %> Comments</h2><br>
+        <%= render @post.comments %><br>
+    </div>
+
+    <div>
+        <% if current_user %>
+        <h3>Add a comment: </h3><br>
+        <%= render  'comments/form' %>  
+    </div>
+        
+<%end%>
+
+
+<%#= link_to "Continue to Read Book", asset_path("rich-dad-poor-dad.pdf"),class: "btn btn-outline-primary"%>
+
+
+
+        <!-- <iframe src=<%#= @post.avatar if @post.avatar.attached? %> width="600" height="780"><br> -->
+          <%#= image_tag @post.avatar.url%>

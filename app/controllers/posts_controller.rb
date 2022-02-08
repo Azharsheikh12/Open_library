@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     # @post = Post.where("title LIKE?","%"+params[:q]+"%")
       # byebug
     @query  = params[:query]
-    @post = Post.where("posts.title LIKE ?",["%#{@query}%"])
+    @post = Post.where("posts.title ILIKE ?",["%#{@query}%"])
     render "index"
 
   end 

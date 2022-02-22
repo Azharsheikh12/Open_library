@@ -1,0 +1,64 @@
+
+  
+<%#= render  'upcoming_books/searchbar' %>  
+   <p id="notice"><%= notice %></p>
+      <p style = "color:green"><%= notice%></p>
+        <div class="col-lg-8 mx-auto">
+      <%#if current_user && current_user.admin %> 
+
+              <%= link_to 'Add New Book', new_upcoming_book_path, class:"btn btn-outline-primary btn-lg mb-3"%> &emsp;
+
+      <%#end  %>              
+        <h1>Books to be Released Soon</h1>
+        <div id="upcoming_books">
+            <%@upcoming_books.each do |upcoming_book| %>
+              <div class="card shadow mb-3">
+                <div class="card-body">
+                  <%= image_tag upcoming_book.image if upcoming_book.image.attached? %>
+                  <%#= video_tag upcoming_book.avatar if upcoming_book.avatar.attached? %>
+                 <p>
+                  <strong>Title:</strong> <%= upcoming_book.title %><br>
+                  <strong>Author:</strong><%= upcoming_book.author %><br>
+                  <strong>Subject:</strong><%= upcoming_book.b_subject %><br>
+                  <!-- <strong>Id:</strong><%#= upcoming_book.user_id %><br> -->
+                 </p>
+              </div>
+           </div> 
+
+
+          <table>
+            <td>
+              <%= link_to 'Book Details', upcoming_book , class:"btn btn-primary btn-lg mb-3"%></td>
+               <%#if current_user && current_user.admin %> 
+                <td><%= link_to 'Edit', edit_upcoming_book_path(upcoming_book), class:"btn btn-primary btn-lg mb-3" %>
+                </td>
+                <td><%= button_to 'Destroy', upcoming_book, class:"btn btn-primary btn-lg mb-3", method: :delete, data: { confirm: 'Are you sure?' } %> </td>     
+                <%# end %>
+            </table>
+        <%end%>
+            
+      </div>
+    </div>
+
+
+
+ <!--  <tbody>
+    <%# @upcoming_books.each do |upcoming_book| %>
+      <tr>
+        <td><%#= upcoming_book.title %></td>
+        <td><%#= upcoming_book.description %></td>
+        <td><%#= upcoming_book.author %></td>
+        <td><%#= upcoming_book.b_subject %></td>
+        <td><%#= upcoming_book.attachment %></td>
+        <td><%#= upcoming_book.user_id %></td>
+        <td><%#= link_to 'Show', upcoming_book %></td>
+        <td><%#= link_to 'Edit', edit_upcoming_book_path(upcoming_book) %></td>
+        <td><%#= link_to 'Destroy', upcoming_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Upcoming Book', new_upcoming_book_path %> -->

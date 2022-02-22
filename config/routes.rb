@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :upcoming_books
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :posts do
@@ -7,11 +8,12 @@ Rails.application.routes.draw do
   end  
   
   root to: 'pages#home'
-  get '/pages/', to: 'pages#home'
+  get '/pages/', to: 'pages#home' 
   
   devise_for :users
 
   get '/search', to: "posts#search"
+  # get '/upcoming_book', to: 'posts#upcoming_book'
 
   # resources :booksdocs, only: [:index, :new, :create, :destroy]
    # root "booksdocs#index"

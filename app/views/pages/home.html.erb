@@ -1,8 +1,9 @@
+
 <div class="card shadow mb-3">
     <div class="card-body mx-auto ">	
         <h1>Welcome to Open Library</h1>
         <%= link_to 'See Available Books', posts_path ,class:"btn btn-outline-primary btn-lg mb-3 mx-auto"%>
-        <%= link_to 'Upcoming Books', posts_path ,class:"btn btn-outline-primary btn-lg mb-3 mx-auto"%><br>
+        <%= link_to 'Upcoming Books',upcoming_books_path ,class:"btn btn-outline-primary btn-lg mb-3 mx-auto"%><br>
 
 
         <% if current_user %>

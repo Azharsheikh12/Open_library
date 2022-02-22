@@ -54,15 +54,16 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
+gem 'devise' #to generate login signup
 
 gem 'cssbundling-rails'
 
 gem 'mini_magick', '>= 4.9.5'
 
-gem 'carrierwave', '~> 0.9'
+gem 'carrierwave', '~> 0.9' #to upload pdf
 
 gem 'bootstrap-sass','~> 2.3.2'
 
-gem 'activeadmin'
+gem 'activeadmin' 
+
 

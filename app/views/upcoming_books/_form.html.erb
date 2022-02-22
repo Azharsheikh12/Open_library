@@ -1,0 +1,44 @@
+        <%= image_tag @upcoming_book.image if @upcoming_book.image.attached? %>
+
+<%= form_with(model: upcoming_book, local: true) do |form| %>
+  <% if upcoming_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(upcoming_book.errors.count, "error") %> prohibited this upcoming_book from being saved:</h2>
+
+      <ul>
+        <% upcoming_book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+   <%= form.label :title , style: "display: block"%><br>
+    <%= form.text_field :title , class: "form-control form-control-lg"%>
+  </div>
+
+   <div class="form-group mb-3">
+    <%= form.label :description , style: "display: block" %><br>
+    <%= form.text_area :description , class: "form-control form-control-lg"%>
+  </div>  
+
+  <div class="form-group mb-3">
+    <%= form.label :author , style: "display: block"%><br>
+    <%= form.text_field :author , class: "form-control form-control-lg" %>
+  </div>  
+
+   <div class="form-group mb-3">
+    <%= form.label :subject , style: "display: block"%><br>
+    <%= form.text_field :b_subject , class: "form-control form-control-lg" %>
+  </div>
+
+   <div class="form-group mb-3">
+    <%= form.label :image , style: "display: block" %><br>
+    <%= form.file_field :image%>
+  </div> 
+  
+   <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

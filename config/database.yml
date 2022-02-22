@@ -15,7 +15,7 @@ default: &default
   adapter: postgresql
   database: <%= ENV['DATABASE'] || 'openlibrary' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
-  password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
   timeout: 5000
@@ -27,7 +27,7 @@ development:
   adapter: postgresql
   database: <%= ENV['DATABASE'] || 'openlibrary' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
-  password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
   port: 5432
 
@@ -41,7 +41,7 @@ test:
   adapter: postgresql
   database: <%= ENV['DATABASE'] || 'openlibrary' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
-  password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
   port: 5432
 
@@ -50,6 +50,6 @@ production:
   adapter: postgresql
   database: <%= ENV['DATABASE'] || 'openlibrary' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
-  password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
   port: 5432

@@ -29,6 +29,7 @@
           <table>
             <td>
               <%= link_to 'Book Details', post , class:"btn btn-primary btn-lg mb-3"%></td>
+              <%#= link_to 'Book Details', post , class:"btn btn-primary btn-lg mb-3"%></td>
                <%if current_user && current_user.admin %> 
                 <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-primary btn-lg mb-3" %>
                 </td>
